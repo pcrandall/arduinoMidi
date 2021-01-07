@@ -19,7 +19,6 @@ Tone right;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(2, INPUT_PULLUP);
   pinMode(Led_Start, OUTPUT);
   pinMode(Led_Left, OUTPUT);
   pinMode(Led_Right, OUTPUT);
@@ -38,6 +37,7 @@ void playButton(int buttonPin) {
   int buttonState = 0;
   while (1) {
     buttonState = digitalRead(buttonPin);
+    Serial.println(buttonState);
     if (buttonState == HIGH) {
       playTitanic();
       return;
@@ -46,7 +46,6 @@ void playButton(int buttonPin) {
 }
 
 void playTitanic() {
-
   Serial.println("NOW PLAYING TITANIC");
   titanic1();
   titanic2();
@@ -80,8 +79,7 @@ void silence(int _duration) {
 }
 
 void titanic1() {
-
-  Serial.println("NOW PLAYING TITANIC1");
+  Serial.println("TITANIC1");
   playStereo(NOTE_E5, NOTE_E4, threeEighths);
   playStereo(NOTE_B3, NOTE_E4, eighth);
   playStereo(NOTE_E5, NOTE_E4, quarter);
@@ -95,7 +93,7 @@ void titanic1() {
 }
 
 void titanic2() {
-  Serial.println("NOW PLAYING TITANIC2");
+  Serial.println("TITANIC2");
   playStereo(NOTE_A3, NOTE_DS5, quarter);
   playStereo(NOTE_A3, NOTE_E5, eighth);
   playStereo(NOTE_E3, NOTE_E5, eighth);
@@ -106,7 +104,7 @@ void titanic2() {
 }
 
 void titanic3() {
-  Serial.println("NOW PLAYING TITANIC3");
+  Serial.println("TITANIC3");
   playStereo(NOTE_A3, NOTE_B4, threeEighths);
   playStereo(NOTE_E3, NOTE_B4, eighth);
   playStereo(NOTE_A3, NOTE_B4, threeEighths);
@@ -120,7 +118,7 @@ void titanic3() {
 }
 
 void titanic4() {
-  Serial.println("NOW PLAYING TITANIC4");
+  Serial.println("TITANIC4");
   playStereo(NOTE_CS4, NOTE_E5, threeEighths);
   playStereo(NOTE_GS3, NOTE_E5, eighth);
   playStereo(NOTE_CS4, NOTE_E5, half);
@@ -147,7 +145,7 @@ void titanic4() {
 }
 
 void titanic5() {
-  Serial.println("NOW PLAYING TITANIC5");
+  Serial.println("TITANIC5");
   playStereo(NOTE_FS3, NOTE_E5, quarter);
   playStereo(NOTE_A3, NOTE_DS5, quarter);
   playStereo(NOTE_A3, NOTE_E5, eighth);
@@ -159,7 +157,7 @@ void titanic5() {
 }
 
 void titanic6() {
-  Serial.println("NOW PLAYING TITANIC6");
+  Serial.println("TITANIC6");
   playStereo(NOTE_FS3, NOTE_DS5, quarter);
   playStereo(NOTE_A3, NOTE_CS5, threeEighths);
   playStereo(NOTE_E3, NOTE_CS5, eighth);
